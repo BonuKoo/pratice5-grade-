@@ -1,0 +1,64 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>성적입력</h1>
+        <br>
+        <form name="scoreForm" action="scoreRegist" method="post" th:object="${form}">
+            <table>
+                <!-- 학년 -->
+                <tr>
+                    <td class="align-center size-150">학년</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{syear}">(예)1
+                    </td>
+                </tr>
+                <!-- 반 -->
+                <tr>
+                    <td class="align-center size-150">반</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{sclass}">(예)01
+                    </td>
+                </tr>
+                <!-- 번호 -->
+                <tr>
+                    <td class="align-center size-150">번호</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{sno}">(예)01
+                    </td>
+                </tr>
+                <!-- 국어 -->
+                <tr>
+                    <td class="align-center size-150">국어</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{kor}">점수범위(0~100)
+                    </td>
+                </tr>
+                <!-- 영어 -->
+                <tr>
+                    <td class="align-center size-150">영어</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{eng}">점수범위(0~100)
+                    </td>
+                </tr>
+                <!-- 수학 -->
+                <tr>
+                    <td class="align-center size-150">수학</td>
+                    <td class ="size-400">
+                        <input type="text" th:field="*{mat}">점수범위(0~100)
+                    </td>
+                </tr>
+                <!-- 입력 폼 -->
+                <tr>
+                    <td class="align-center" colspan=2>
+                        <input type="button" value="성적저장" onclick="registScore()">
+                        <input type="reset" value="다시쓰기" onclick="resetScore()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script src="../static/js/script.js"></script>
+</div>
+</html>

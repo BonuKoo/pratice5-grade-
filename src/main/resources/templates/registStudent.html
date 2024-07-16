@@ -1,0 +1,78 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>학생등록</h1>
+        <br>
+        <form name="studentForm" action="studentRegist" method="post" th:object="${form}">
+            <table>
+                <thead></thead>
+                <tbody>
+                <!-- 학년 -->
+                <tr>
+                    <td class="align-center size-150">학년</td>
+                    <td class ="size-400 ">
+                        <input type="text" th:field="*{syear}">(예)1
+                    </td>
+                </tr>
+                <!-- 반 -->
+                <tr>
+                    <td class="align-center">반</td>
+                    <td>
+                        <input type="text" th:field="*{sclass}">(예)01
+                    </td>
+                </tr>
+                <!-- 번호 -->
+                <tr>
+                    <td class="align-center">번호</td>
+                    <td>
+                        <input type="text" th:field="*{sno}">(예)01
+                    </td>
+                </tr>
+
+                <!-- 이름 -->
+                <tr>
+                    <td class="align-center">이름</td>
+                    <td>
+                        <input type="text" th:field="*{sname}">
+                    </td>
+                </tr>
+                <!-- 생년월일 -->
+                <tr>
+                    <td class="align-center">생년월일</td>
+                    <td>
+                        <input type="text" th:field="*{birth}">(예)20190301
+                    </td>
+                </tr>
+                <!-- 성별 -->
+                <tr>
+                    <td class="align-center">성별</td>
+                    <td>
+                        <input type="radio" th:field="*{gender}" value="M" checked>남성
+                        <input type="radio" th:field="*{gender}" value="F">여성
+                    </td>
+                </tr>
+                <!-- 전화번호 -->
+                <tr>
+                    <td class="align-center">전화번호</td>
+                    <td>
+                        <input type="text" th:field="*{tel1}">-
+                        <input type="text" th:field="*{tel2}">-
+                        <input type="text" th:field="*{tel3}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-center" colspan=2>
+                        <input type="button" value="학생등록" onclick="registStudent()">
+                        <input type="reset" value="다시쓰기" onclick="resetStudent()">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+
+    <script src="../static/js/script.js"></script>
+</div>
+</html>

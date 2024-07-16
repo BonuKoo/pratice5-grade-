@@ -1,0 +1,112 @@
+/* 전체 레이아웃을 위한 기본 스타일 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header 스타일 */
+header {
+    background-color: pink;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation 스타일 */
+nav {
+    background-color: green;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+/* Main content 스타일 */
+main.content {
+    text-align:center;
+    background-color: white; /* 변경할 배경색 */
+    flex: 1; /* 남은 공간을 채우도록 설정 */
+    padding: 20px;
+    margin: 0 20px; /* 좌우 마진 */
+    overflow: auto; /* 콘텐츠가 넘칠 때 스크롤을 추가 */
+}
+
+#
+
+#contents {
+	min-height: 500px;
+	display: flex;
+	justify-content: center;
+	background-color: #F6DDD0;
+}
+
+h1, h2{
+	text-align: center;
+}
+
+dt{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+dd{
+	margin: 40px;
+}
+table{
+    margin : 0 auto;
+}
+
+th, td{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	font-size: 18px;
+	}
+
+.size-100{
+	width: 100px;
+}
+.size-150{
+	width: 150px;
+}
+.size-400{
+	width: 400px;
+}
+.align-center{
+	text-align:center;
+}
+.align-right{
+	text-align:right;
+}
+
+/* Footer 스타일 */
+footer {
+    background-color: pink;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content {
+    margin: 0;
+}

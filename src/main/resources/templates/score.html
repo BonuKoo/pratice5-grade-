@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>학생성적조회</h1>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th class="size-150 align-center">학년-반-번호</th>
+                <th class="size-150 align-center">이름</th>
+                <th class="size-150 align-center">성별</th>
+                <th class="size-150 align-center">국어</th>
+                <th class="size-150 align-center">영어</th>
+                <th class="size-150 align-center">수학</th>
+                <th class="size-150 align-center">총점</th>
+                <th class="size-150 align-center">평균</th>
+            </tr>
+            </thead>
+            <!--출력 부분-->
+            <tbody>
+            <tr th:each="studentWithScore : ${studentsWithScores}">
+                <td class="align-center" th:text="${studentWithScore.S_ClassYearNo}"></td>
+                <td class="align-center" th:text="${studentWithScore.sname}"></td>
+                <td class="align-center" th:text="${studentWithScore.gender}"></td>
+                <td class="align-center" th:text="${studentWithScore.kor}"></td>
+                <td class="align-center" th:text="${studentWithScore.eng}"></td>
+                <td class="align-center" th:text="${studentWithScore.mat}"></td>
+                <td class="align-center" th:text="${studentWithScore.tot}"></td>
+                <td class="align-center" th:text="${studentWithScore.avg}"></td>
+            </tr>
+            <!-- 과목 총점 -->
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="align-center">학년총점</td>
+                <td class="align-center" th:text="${totalKorScore}"></td>
+                <td class="align-center" th:text="${totalEngScore}"></td>
+                <td class="align-center" th:text="${totalMatScore}"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- 과목 평균 -->
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="align-center">학년평균</td>
+                <td class="align-center" th:text="${avgKorScore}"></td>
+                <td class="align-center" th:text="${avgEngScore}"></td>
+                <td class="align-center" th:text="${avgMatScore}"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</html>
