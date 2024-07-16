@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>반별통계</h1>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th class="size-150 align-center">학년</th>
+                <th class="size-150 align-center">반</th>
+                <th class="size-150 align-center">교사명</th>
+                <th class="size-150 align-center">국어총점</th>
+                <th class="size-150 align-center">영어총점</th>
+                <th class="size-150 align-center">수학총점</th>
+                <th class="size-150 align-center">국어평균</th>
+                <th class="size-150 align-center">영어평균</th>
+                <th class="size-150 align-center">수학평균</th>
+            </tr>
+            </thead>
+            <!--출력 부분-->
+            <tbody>
+            <tr th:each="list : ${list}">
+                <!-- 학년 -->
+                <td class="align-center" th:text="${list.syear}"></td>
+                <!-- 반 -->
+                <td class="align-center" th:text="${list.sclass}"></td>
+                <!-- 교사명 -->
+                <td class="align-center" th:text="${list.tname}"></td>
+                <!-- 국어총합 -->
+                <td class="align-center" th:text="${list.totalKorean}"></td>
+                <!-- 영어총합 -->
+                <td class="align-center" th:text="${list.totalEnglish}"></td>
+                <!-- 수학총합 -->
+                <td class="align-center" th:text="${list.totalMath}"></td>
+                <!-- 국어평균 -->
+                <td class="align-center" th:text="${#numbers.formatDecimal(list.averageKorean, 2, 1)}"></td>
+                <!-- 영어평균 -->
+                <td class="align-center" th:text="${#numbers.formatDecimal(list.averageEnglish, 2, 1)}"></td>
+                <!-- 수학평균 -->
+                <td class="align-center" th:text="${#numbers.formatDecimal(list.averageMath, 2, 1)}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</html>

@@ -1,5 +1,6 @@
 package com.example.pratice5_grademanagement_.common.controller;
 
+import com.example.pratice5_grademanagement_.domain.score.dto.ClassTotalAndAvgScoresDTO;
 import com.example.pratice5_grademanagement_.domain.score.dto.ScoreRegistForm;
 import com.example.pratice5_grademanagement_.domain.score.service.ScoreService;
 import com.example.pratice5_grademanagement_.domain.student.dto.StudentRegistForm;
@@ -94,21 +95,21 @@ public class MainController {
         return "score";
     }
 
-    //반별통계
-    @GetMapping("/average")
-    public String getAverage(){
-
     /*
 
         '반' 별통계 ->
         학년,반,교사명,국어 총점, 영어 총점, 수학 총점, 국어 평균, 영어 평균, 수학 평균
 
-
      */
 
+    //반별통계
+    @GetMapping("/average")
+    public String getAverage(Model model){
+
+        List<ClassTotalAndAvgScoresDTO> totalAndAvgList = scoreService.findTotalScoresByClassVer4();
+        model.addAttribute("list",totalAndAvgList);
         return "average";
     }
-
 
 
 }

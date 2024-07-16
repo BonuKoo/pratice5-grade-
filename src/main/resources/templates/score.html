@@ -23,12 +23,12 @@
             <tr th:each="studentWithScore : ${studentsWithScores}">
                 <td class="align-center" th:text="${studentWithScore.S_ClassYearNo}"></td>
                 <td class="align-center" th:text="${studentWithScore.sname}"></td>
-                <td class="align-center" th:text="${studentWithScore.gender}"></td>
+                <td class="align-center" th:text="${studentWithScore.gender == 'F' ? '여' : (studentWithScore.gender == 'M' ? '남' : '정보 없음')}"></td>
                 <td class="align-center" th:text="${studentWithScore.kor}"></td>
                 <td class="align-center" th:text="${studentWithScore.eng}"></td>
                 <td class="align-center" th:text="${studentWithScore.mat}"></td>
                 <td class="align-center" th:text="${studentWithScore.tot}"></td>
-                <td class="align-center" th:text="${studentWithScore.avg}"></td>
+                <td class="align-center" th:text="${#numbers.formatDecimal(studentWithScore.avg,2,1)}"></td>
             </tr>
             <!-- 과목 총점 -->
             <tr>

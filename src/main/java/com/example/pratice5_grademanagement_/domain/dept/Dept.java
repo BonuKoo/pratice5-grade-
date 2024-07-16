@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tbl_dept_01")
-@Entity //교사
+@Entity
 public class Dept {
 
     /*

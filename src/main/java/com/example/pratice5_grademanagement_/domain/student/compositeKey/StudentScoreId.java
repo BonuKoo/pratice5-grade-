@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor @AllArgsConstructor
 @Embeddable
 public class StudentScoreId {
-
+    //학년
     @Column(length = 1, nullable = false)
     private String syear;
-
+    //반
     @Column(length = 2, nullable = false)
     private String sclass;
-
+    //번호
     @Column(length = 2, nullable = false)
     private String sno;
 }
